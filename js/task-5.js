@@ -8,7 +8,7 @@ function getRandomHexColor() {
 
 function changeColor() {
   const hexColor = getRandomHexColor();
-  document.querySelector('span.color').textContent = hexColor;
+  document.body.querySelector('span.color').textContent = hexColor;
   document.body.style.backgroundColor = hexColor;
 }
 
