@@ -20,7 +20,7 @@
 // Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу до елементів форми використовуй властивість elements.
 // При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
-const delReq = document.querySelector('form.login-form').addEventListener('submit', event => {
+document.querySelector('form.login-form').addEventListener('submit', event => {
   event.preventDefault();
   const currEven = event.currentTarget;
 
