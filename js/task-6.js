@@ -34,12 +34,15 @@ buttonDestroy.addEventListener('click', destroyBoxes);
 
 //handlers
 function createBoxes(amount) {
+  //якщо цю функцію прибрати то квадрати будуть надбудовуватись, а не стиратись і малюватись заново.
+  destroyBoxes();
   const boxes = document.getElementById('boxes');
   let boxElements = [];
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
     let last = 30;
 
+    // 0) реалізовував з розрахунком що destroyBoxes() можна прибрати;
     // 1) реалізував для кожно елементу чрз значення ширини попереднього елементу
     // 2) також можна визначати ширину дочірнього ел перед циклом, а нові обраховувати математично, але так як lastElementChild це властивість не бачу принципової різниці в цих підходах
     if (boxes.lastElementChild !== null) {
