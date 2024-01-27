@@ -37,10 +37,13 @@ const images = [
 // так як завдання одиничне не використовую окрему змінну
 document.body.querySelector('.gallery').append(
   ...images.map(el => {
+    const li = document.createElement('li');
     const img = document.createElement('img');
+    // так як я розумію можна адже власне на сторінку елементи будуть додаватись вже в верхньому аppend а li ще поки в DOM не існує
+    li.appendChild(img);
     img.src = el.url;
     img.alt = el.alt;
     img.width = '200';
-    return img;
+    return li;
   })
 );
