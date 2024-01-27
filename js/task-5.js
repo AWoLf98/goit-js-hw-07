@@ -6,13 +6,15 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+// так як завдання одиничне не використовую окрему змінну
+document.body.querySelector('button.change-color').addEventListener("click", changeColor);
+
+// handler
 function changeColor() {
   const hexColor = getRandomHexColor();
   document.body.querySelector('span.color').textContent = hexColor;
   document.body.style.backgroundColor = hexColor;
 }
-
-document.body.querySelector('button.change-color').addEventListener("click", changeColor);
 
 // Напиши скрипт, який змінює колір фону елемента <body> через інлайн-стиль по кліку на button.change-color і задає це значення кольору текстовим вмістом для span.color.
 

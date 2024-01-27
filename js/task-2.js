@@ -27,13 +27,14 @@ const images = [
   },
 ];
 
+// так як завдання одиничне не використовую окрему змінну
 document.querySelector('.gallery').append(
   ...images.map(el => {
-    const elem = document.createElement('img');
-    elem.src = el.url;
-    elem.alt = el.alt;
-    elem.width = '200';
-    return elem;
+    const img = document.createElement('img');
+    img.src = el.url;
+    img.alt = el.alt;
+    img.width = '200';
+    return img;
   })
 );
 

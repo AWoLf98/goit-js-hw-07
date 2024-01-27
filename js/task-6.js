@@ -16,9 +16,9 @@ buttonCreate.addEventListener('click', function () {
   if (inputNumber.value >= 1 && inputNumber.value <= 100) {
     createBoxes(inputNumber.value);
   } else {
-    inputNumber.value = '';
     alert('Bad number! min="1" max="100" step="1"');
   }
+  inputNumber.value = '';
 });
 
 buttonDestroy.addEventListener('click', destroyBoxes);
@@ -31,15 +31,14 @@ function createBoxes(amount) {
     const box = document.createElement('div');
     let last = 30;
 
-    // в px бо браузер вимагає одиниць вимірювання для інтерпретації цього значення
     // 1) реалізував для кожно елементу чрз значення ширини попереднього елементу
     // 2) також можна визначати ширину дочірнього ел перед циклом, а нові обраховувати математично, але так як lastElementChild це властивість не бачу принципової різниці в цих підходах
     if (boxes.lastElementChild !== null) {
       const tempWidth = boxes.lastElementChild.style.width;
-      last = 10 + parseInt(tempWidth.slice(0,tempWidth.length-2));
+      last = 10 + parseInt(tempWidth.slice(0, tempWidth.length - 2));
     }
 
-    box.style.width = box.style.height = `${10*i + last}px`;
+    box.style.width = box.style.height = `${10 * i + last}px`;
     box.style.backgroundColor = getRandomHexColor();
     boxElements.push(box);
   }
@@ -47,7 +46,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  document.querySelectorAll("div#boxes > div").forEach(el => el.remove());
+  document.querySelectorAll('div#boxes > div').forEach(el => el.remove());
 }
 
 // Напиши скрипт створення й очищення колекції елементів з наступним функціоналм.

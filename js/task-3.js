@@ -4,6 +4,7 @@
 
 const nameOutput = document.querySelector('span#name-output');
 
+// так як завдання одиничне не використовую окрему змінну
 document.querySelector('input#name-input').addEventListener('input', event => {
   const tempText = event.currentTarget.value.trim();
   if (tempText === '') {
